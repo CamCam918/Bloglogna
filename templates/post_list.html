@@ -10,6 +10,7 @@
             <a href="{% url 'post_detail' post.id %}"><h3>{{ post.title }}</a></h3>
             <p id="subtitle">By {{ post.author }} | Created: {{ post.create_at }}</p>
             <p>{{ post.body }}</p>
+            <a href="{% url 'post_edit' post.id%}" class="btn btn-success">Edit</a>
             </li>
         </div>
         {% endfor %}
