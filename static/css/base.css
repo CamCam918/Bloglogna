@@ -2,6 +2,7 @@ h2, h3 {
     color:red;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
+    text-decoration: none;
 }
 p {
     font-family: 'Roboto', sans-serif;
@@ -12,4 +13,29 @@ p {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-style: italic;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+}
+
+a:hover {
+    color: rgba(192, 35, 35, 0.589);
+}
+
+.nav-item {
+    border: none;
+}
+
+li {
+    margin: 5px;
+    list-style: none;
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+img {
+    height: 100px;
 }
