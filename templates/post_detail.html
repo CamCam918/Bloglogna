@@ -3,11 +3,14 @@
 {% block title %}Post #{{ post.id }}{% endblock title %}
 
 {% block content %}
+<div class="post">
     <h2> {{ post.title }}</h2>
     <p id="subtitle"> By: {{ post.author }}</p>
     <p> Content: {{ post.body }} </p>
     <a href="{% url 'post_edit' post.id%}" class="btn btn-success">Edit</a>
+    <a href="{% url 'post_delete' post.id %}" class = "btn btn-danger">Delete</a>
+</div>
 
-    Click <a href="{% url 'home' %}">here</a> to go to the homepage.
-    You can also click <a href="{% url 'all_posts' %}">here</a> to go back to the Post view, or don't. Who cares!?
+    <p>Click <a href="{% url 'home' %}">here</a> to go to the homepage.</p>
+    You can also click <a href="{% url 'all_posts' %}">here</a> to go back to the list of Bloglogna posts, or don't. Who cares!?
 {% endblock content %}

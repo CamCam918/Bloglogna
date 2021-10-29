@@ -28,7 +28,7 @@ a:hover {
     border: none;
 }
 
-li {
+.post li {
     margin: 5px;
     list-style: none;
     border: solid 2px black;
