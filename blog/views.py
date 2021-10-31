@@ -32,23 +32,25 @@ class PostDetailView(DetailView):
     model = Post
     template_name = "post_detail.html"
 
-    
-
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "post_new.html"
     fields = ["title", "body", "author"]
 
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     template_name = "post_edit.html"
     fields = ["title", "body"]
 
     def test_func(self):
         obj = self.get_object()
-        return obj.author ==  self.request.user
+        return obj.author == self.request.user
 
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -58,6 +60,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         obj = self.get_object()
-        return obj.author ==  self.request.user
-
-
+        return obj.author == self.request.user
